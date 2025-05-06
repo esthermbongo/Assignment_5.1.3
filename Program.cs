@@ -8,23 +8,32 @@
 
         }
 
-        public static bool CheckNums(int[] nums)
+        static bool CheckNums(int[] nums)
         {
+            HashSet<int> set = new HashSet<int>();
             foreach (int i in nums)
             {
-                while (i > nums.Length)
-                {
-                    if (i == i + 1)
-                    {
-                        return true;
-                    }
-
-                    else
-                    {
-                        return false;
-                    }
-                }
+                if (set.Contains(i)) return true;
+                else set.Add(i);
             }
+            return false;
         }
+
+        //    foreach (int i in nums)
+        //    {
+        //        while (i > nums.Length)
+        //        {
+        //            if (i == i + 1)
+        //            {
+        //                return true;
+        //            }
+
+        //            else
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
